@@ -21,6 +21,10 @@ properties = [
     Property(id=3, name="オーシャンビュー", age=2, size=85.5, type="マンション", image="house3.png"),
 ]
 
+@app.get('/')
+async  def first_page():
+    return '最初のページです'
+
 @app.get("/properties", response_model=List[Property])
 async def get_all_properties():
     return properties
